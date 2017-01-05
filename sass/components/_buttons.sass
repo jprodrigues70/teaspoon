@@ -1,0 +1,33 @@
+.btn
+    &-bounce-r
+        @extend .btn
+
+        color: #00BABA
+
+        +bounce(#00BABA, center, #FFF)
+
+    &-send
+        min-width: 30%
+
+        @extend .btn
+
+        color: #314F4F
+
+        +bounce(#314F4F, center, #FFF)
+
+    &.small
+        padding: 5px 10px
+        min-width: auto
+        font-size: 12px
+
+a .btn
+    margin: 0 auto
+
+.btn-case
+
+    a::after
+        display: block
+        clear: both
+        content: ""
+    .btn
+        float: right
