@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Colher de Chá</title>
+    <link rel="stylesheet" href="assets/css/teaspoon.css">
+  </head>
+  <body>
+    <header class="king-menu">
+      <img src="assets/img/teaspoon.svg" alt="" />
+      <div class="profile">
+        <img class="pic" src="assets/img/jp.jpeg" alt="JP" />
+      </div>
+      <nav>
+        <ul>
+          <a href="."><li>Início</li></a>
+          <a href="sort"><li>Ordenação</li></a>
+          <a href="search"><li>Busca</li></a>
+        </ul>
+      </nav>
+    </header>
+    <section class="green first">
+      <div class="text">
+        <h1>Algoritmos de Busca</h1>
+        <p>
+          Uma das coisas mais comuns em desenvolvimento de software é a necessidade de se buscar algo, seja em uma lista ou em uma tabela, array, ou qualquer outra estrutura que armazene um número n de dados. ¯\_(ツ)_/¯
+        </p>
+        <p>
+          Um algotitmo de busca é aquele que aceita um argumento 'a' e tenta encontrar o registro cuja chave seja 'a'.
+        </p>
+        <p>Sendo assim, dado um conjunto de elementos, onde cada um é identificado por uma chave, o objetivo da busca é encontrar o elemento que corresponde a uma determinada chave.
+        </p>
+        <p>
+          Enfim... Segue alguns algoritmos.
+        </p>
+        <p>
+          <b>OPA!</b> E, por favor, lembre que isso aqui é feito por um estudante! Se encontrar um erro, ou conhecer um formato melhor, cria uma issue com o seu conteúdo! :D
+        </p>
+        <a href="https://github.com/jprodrigues70/teaspoon/issues/new" target="_blank"><button class="btn-bounce-r white" type="button" name="button">Criar Issue</button></a>
+      </div>
+      <div class="image hxs">
+        <img src="assets/img/search-engine.svg" alt="" />
+      </div>
+    </section>
+    <section>
+      <h1>Busca Sequencial</h1>
+      <p>
+        Essa é a forma mais simples de busca. Basicamente, percorre-se elemento por elemento em busca do correspondente à chave.
+      </p>
+      <p>
+        A Busca Sequencial, no pior caso, é O(n).
+      </p>
+      <div class="code-block">
+        <code>int search(int key, int v[]) {</code>
+        <code><span>..</span>int i;</code>
+        <code><span>.</span></code>
+        <code><span>..</span>for (i = 0; i < n; i++) {</code>
+        <code><span>....</span>if (v[i] == key) return i;<span> //Encontrou a chave na posição i.</span></code>
+        <code><span>..</span>}</code>
+        <code><span>..</span>return -1; <span>Não encontrou a chave.</span></code>
+        <code>}</code>
+      </div>
+    </section>
+    <section class="sass-pink">
+      <h1>Busca Binária</h1>
+      <p>
+        Nesse tipo de busca, é necessário que os elementos estejam ordenados. Assim, a Busca Binária vai comparar o elemento buscado com o elemento do meio do vetor.
+      </p>
+      <ul>
+        <li>Se igual, encontrou.</li>
+        <li>Se menor, busca-se apenas na metade da esquerda.</li>
+        <li>Se maior, busca-se apenas na metade da direita.</li>
+      </ul>
+      <p>
+        A complexidade é O(log n), porque cada comparação reduz o range de busca por um fator de 2.
+      </p>
+      <div class="btn-case">
+        <a href="files/bb.c"><button type="button" name="button" class="btn small">C</button></a>
+      </div>
+      <div class="code-block">
+        <code>int bb(int key, int n, int v[]) {</code>
+        <code><span>..</span>int l, m, r;</code>
+        <code><span>..</span>r = n - 1;</code>
+        <code><span>..</span>l = 0;</code>
+        <code><span>..</span>while (l < r) {</code>
+        <code><span>....</span>m = (l + r) / 2;</code>
+        <code><span>....</span>if (v[m] < key) l = m + 1;</code>
+        <code><span>....</span>else r = m;</code>
+        <code><span>..</span>}</code>
+        <code><span>..</span>return (v[l] == key)? l: -1;</code>
+        <code>}</code>
+      </div>
+    </section>
+  </body>
+</html>
