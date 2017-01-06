@@ -2,9 +2,9 @@
 
 int quickSort(int v[], int left, int right) {
   int i, j;
-  int key, aux;
+  int pivot, aux;
 
-  int pivot = v[(left + right)/2];
+  pivot = v[(left + right)/2];
   i = left;
   j = right;
   while (i <= j) {
