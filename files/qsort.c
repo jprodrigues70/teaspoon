@@ -4,12 +4,12 @@ int quickSort(int v[], int left, int right) {
   int i, j;
   int key, aux;
 
-  pivot = v[(left + right)/2];
+  int pivot = v[(left + right)/2];
   i = left;
   j = right;
   while (i <= j) {
     while (pivot < v[i]) i++;
-    while (v[j] < pivot) j--
+    while (v[j] < pivot) j--;
     if (i <= j) {
       aux = v[i];
       v[i] = v[j];

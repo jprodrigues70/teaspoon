@@ -263,13 +263,13 @@
         <code><span>..</span>int i, j;</code>
         <code><span>..</span>int key, aux;</code>
         <code><span>.</span></code>
-        <code><span>..</span>pivot = v[(left + right)/2];</code>
+        <code><span>..</span>int pivot = v[(left + right)/2];</code>
         <code><span>..</span>i = left;</code>
         <code><span>..</span>j = right;</code>
 
         <code><span>..</span>while (i <= j) {</code>
         <code><span>....</span>while (pivot < v[i]) i++;</code>
-        <code><span>....</span>while (v[j] < pivot) j--</code>
+        <code><span>....</span>while (v[j] < pivot) j--;</code>
         <code><span>....</span>if (i <= j) {</code>
         <code><span>......</span>aux = v[i];</code>
         <code><span>......</span>v[i] = v[j];</code>
